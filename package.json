@@ -1,0 +1,17 @@
+{
+  "name": "golden-raspberry-awards",
+  "description": "An API to obtain the longest and shortest interval between consecutive awards for film producers",
+  "version": "1.0.0",
+  "author": "@arcenojackson",
+  "main": "main.js",
+  "type": "module",
+  "engines": {
+    "node": "23.1.0",
+    "npm": "10.9.0"
+  },
+  "scripts": {
+    "dev": "node --experimental-sqlite src/main.js",
+    "test": "node test/integration.js"
+  },
+  "license": "ISC"
+}

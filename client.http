@@ -1,0 +1,6 @@
+@baseUrl = http://localhost:3333
+
+
+# @name fetch_producer_awards_intervals
+GET {{baseUrl}}/awards/intervals
+Content-Type: application/json
