@@ -4,16 +4,16 @@ import { db } from './db.js'
 export const routes = [
   {
     method: 'GET',
-    path: '/awards/intervals',
+    path: '/producers/awards/intervals',
     handler: (_, res) => {
       const awardsByProducer = {}
-      const query = db.prepare('SELECT producer, year FROM movies ORDER BY year')
+      const query = db.prepare('SELECT producers, year FROM movies WHERE winner = 1 ORDER BY year')
       const data = query.all()
-      data.forEach(({ producer, year }) => {
-        if (!awardsByProducer[producer]) {
-          awardsByProducer[producer] = []
+      data.forEach(({ producers, year }) => {
+        if (!awardsByProducer[producers]) {
+          awardsByProducer[producers] = []
         }
-        awardsByProducer[producer].push(year)
+        awardsByProducer[producers].push(year)
       })
       const result = findIntervals(awardsByProducer)
       return res.writeHead(200, { 'Content-Type': 'application/json' }).end(JSON.stringify(result))

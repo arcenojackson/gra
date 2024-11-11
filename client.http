@@ -2,5 +2,5 @@
 
 
 # @name fetch_producer_awards_intervals
-GET {{baseUrl}}/awards/intervals
+GET {{baseUrl}}/producers/awards/intervals
 Content-Type: application/json
